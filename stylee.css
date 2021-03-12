@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box !important;
+}
+body {
+  background-color: #666666;
+  font-size: 14px;
+  font-family: "poppins", sans-serif;
+  line-height: 1.80857;
+  font-weight: normal;
+  overflow-x: hidden;
+}
+p {
+  color: #f0f0f0;
+}
+a {
+  color: #1f1f1f;
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0;
+  font-weight: normal;
+  position: relative;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  line-height: normal;
+  color: #f0f0f0;
+  margin: 0;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 22px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 13px;
+}
+
+.Main-container {
+  width: 100vw;
+  height: auto;
+  background-color: #f7f8fb;
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container-card {
+  width: 520px;
+  height: auto;
+  background: #383e56;
+  font-family: poppins;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+  margin-top: 35px;
+  padding-top: 15px;
+  padding-right: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transition: transform 0.2s;
+  padding-bottom: 15px;
+  border-radius: 25px;
+}
+.img-text-div1 {
+  height: auto;
+  font-family: "poppins", sans-serif;
+  margin: 20px;
+  justify-content: space-evenly;
+  display: flex;
+  margin-top: -45px;
+  flex-wrap: wrap;
+}
+.img-book {
+  width: 154px;
+  height: 236px;
+  border: 1px #442020;
+  background-size: cover;
+  left: 20px;
+  min-width: 154px;
+  max-width: 154px;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 90%);
+  transition: transform 0.5s;
+}
+.img-book img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info-book {
+  width: 250px;
+  height: auto;
+  margin-left: 5%;
+  transform: translateY(32px);
+}
+.line-sep {
+  background-color: #f0f0f0;
+  height: 2px;
+  margin-top: 10px;
+  width: auto;
+}
+.botton-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.text-buy-now {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.text-botton {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 11px;
+}
+.buy-now {
+  background-color: #e6672e;
+  padding-top: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 25px;
+  margin-top: -10px;
+  margin-right: -20px;
+  transform: translateY(-3px);
+}
+.container-card:hover {
+  transform: scale(1.05);
+}
+.filter {
+    padding: 30px 60px;
+}
+.filter input,.filter select {
+    padding: 10px;
+}
+.filter .btn {
+    padding: 8px 10px;
+    margin-top: 0;
+}
