@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/0407d298dc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title> A T H O U R S</title>
+    <title> A U T H O U R S</title>
 </head>
 <body>
         <!--begin header-->
@@ -20,38 +20,50 @@
         </ul>
     </header>
     <!--End header-->
-    <div class="form">
+ <div class="form">
     <form action="engin.php" method="POST">
         <div class="one">
-        <div>
-        <label for="name">CIN</label><br>
-        <input type="text" name="cin">
-        <label for="name">First Name</label><br>
-        <input type="text" name="Fname">
-        <label for="name">Last Name</label><br>
-        <input type="text" name="Lname">
-    </div>
+            <div>
+                <label for="name">CIN</label>
+                <input type="text" name="cin">
+            </div>
 
-</div>
-    <div>
-        <label for="name">Date</label><br>
-        <input type="date" name="birthDate">
+            <div>
+                <label for="name">First Name</label>
+                <input type="text" name="Fname">
+            </div>
+        </div>
+
+        <div class="one">
+            <div>
+                <label for="name">Last Name</label>
+                <input type="text" name="Lname">
+            </div>
+
+        <div>
+                <label for="name">Date</label>
+                <input type="date" name="birthDate">
+        </div>
+       
     </div>
-    <br>
-    <div>
+       
+
+    
+    
+    <div style="text-align:center;">
         <input type="submit" value="ADD" name="add">
     </div>    
     </form>
     </div>
 
+<div class="table-container">
     <table>
-    
         <tr>
-            <th>CIN</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>date naissance</th>
-            <th>Actions</th>
+            <th><h4>CIN</h4></th>
+            <th><h4>First Name</h4></th>
+            <th><h4>Last Name</h4></th>
+            <th><h4>date naissance</h4></th>
+            <th><h4>Actions</h4></th>
         </tr>
     <?php
         include "connection.php";
@@ -63,14 +75,15 @@
                     <td>".$row['Fname']."</td>
                     <td>".$row['Lname']."</td>
                     <td>".$row['birthDate']."</td>
-                    <td><a href='engin.php?cin=".$row['cin']."' name='delete'>delete</a></td>t<td><a href='update.php?cin=".$row['cin']."'>update</a></td>
+                    <td><a href='engin.php?cin=".$row['cin']."' name='delete'><i class='far fa-trash-alt'></i></a>
+                    <a href='update.php?cin=".$row['cin']."'><i class='far fa-edit'></i></a></td>
                     </tr>
                     ";
         }
 
     ?>
     </table>
-
+    </div>
 
 <footer>
 

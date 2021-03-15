@@ -1,3 +1,6 @@
+<?php
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/0407d298dc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title> A T H O U R S</title>
+    <title> B O O K S</title>
 </head>
 <body>
         <!--begin header-->
@@ -23,57 +26,81 @@
     
     <div class="form">
     <form action="engin.php" method="POST">
-        <div class="one">
-        <div>
-        <label for="name">Title</label><br>
+
+<div class="one">
+<div>
+        <label for="title">Title</label>
         <input type="text" name="title">
 
     </div>
     <div>
-        <label for="name">Price</label><br>
+        <label for="name">Price</label>
         <input type="number" name="price">
 
     </div>
+</div>
+<div  class="one">
     <div>
-        <label for="name">Date</label><br>
+        <label for="name">Date</label>
         <input type="date" name="PubDate">
     </div>
     <div>
-        <select name="" id="authors">Authors
+        <label for="authors">Authors</label>
+        <select name="authors" id="authors">Authors
             <option value="">author 1</option>
         </select>
 
     </div>
-    <div>
-    <input type="file" name="img">
-
-    </div>
 </div>
 
-    <br>
     <div>
+        <label for="img" id="img_label"><i class="fas fa-arrow-up"></i></label>
+        <input type="file" name="img" id="img" hidden>
+
+    </div>
+ 
+    <div style="text-align:center;">
         <input type="submit" value="ADD" name="ADD">
     </div>    
     </form>
     </div>
 
+<div class="table-container">
     <table>
         <tr>
-            <th>Title</th>
-            <th>date</th>
-            <th>image</th>
-            <th>Actions</th>
+            <th><h4>ID</h4></th>
+            <th><h4>Title</h4></th>
+            <th><h4>date</h4></th>
+            <th><h4>Price</h4></th>
+            <th><h4>image</h4></th>
+            <th><h4>Actions</h4></th>
         </tr>
 
-        <tr>
-            <td>Salma</td>
-            <td>14-11-98</td>
-            <td><img src="" alt=""></td>
-            <td></td>
-        </tr>
+        <?php
+        include "connection.php";
+
+        $query="SELECT * FROM `books`";
+        $execute= mysqli_query($connection,$query);
+
+        while($data=$execute->fetch_assoc()){
+            echo "<tr> 
+                    <td>".$data['id']."</td>
+                    <td>".$data['name']."</td>
+                    <td>".$data['PubDate']."</td>
+                    <td>".$data['price']."</td>
+                    <td><img src='images/".$data['img']."' width=100px /></td>
+                    
+                    <td><a href='engin.php?id=".$data['id']."'><i class='far fa-trash-alt'></i></a>
+                    <a href='edit.php?id=".$data['id']."'><i class='far fa-edit'></i></a></td>
+                    </tr>
+                    ";
+                 
+        }
+
+        ?>
     </table>
 
-
+    </div>
 <footer>
 
         

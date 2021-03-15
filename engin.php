@@ -34,16 +34,37 @@ if(isset($_POST['ADD'])){
     $title=$_POST['title'];
     $price=$_POST['price'];
     $date=$_POST['PubDate'];
-    $image=$_POST['image'];
-    print_r($_POST)
+    $image=$_POST['img'];
+    print_r($_POST);
 
-    $addBook="INSERT INTO books (title,price,PubDate,img) VALUES ('$title','$price','$date','$image')";
+    $addBook="INSERT INTO books (name,price,PubDate,img) VALUES ('$title','$price','$date','$image')";
+   
      $test=mysqli_query($connection,$addBook);
-    // header('location:book.php');
-    if($test){
-    echo "okay";}
-    else{
-        echo "no";
-    }
+     header('location:books.php');
+  
 }
+
+if(isset($_GET['id'])){
+    $test="DELETE FROM `books` WHERE id='".$_GET['id']."'";
+    $resulat=mysqli_query($connection,$test);
+     header('location:books.php');
+    // if($resulat){
+    //     echo "done";
+    // }else{
+    //     echo "ERROR" .mysqli_error($connection);
+    // }
+}
+
+if(isset($_POST['EDIT'])){
+        $id=$_POST['id'];
+        $title=$_POST['title'];
+        $price=$_POST['price'];
+        $date=$_POST['PubDate'];
+        $img=$_POST['img'];
+        $query="UPDATE `books` SET `name`='$title',`price`='$price',`PubDate`='$date',`img`='$img' WHERE id='$id'";
+        $test=mysqli_query($connection,$query);
+         header('location:books.php');
+
+}
+
 ?>
