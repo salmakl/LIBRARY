@@ -35,12 +35,24 @@ if(isset($_POST['ADD'])){
     $price=$_POST['price'];
     $date=$_POST['PubDate'];
     $image=$_POST['img'];
-    print_r($_POST);
+    $Author=$_POST['authors'];
 
     $addBook="INSERT INTO books (name,price,PubDate,img) VALUES ('$title','$price','$date','$image')";
-   
      $test=mysqli_query($connection,$addBook);
+     $requete="select Max(id) As id from books";
+     $result=mysqli_query($connection,$requete);
+     while($row=$result->fetch_assoc()){
+        $idBook=$row["id"];
+    }
+    $requeste="INSERT into books_authors (idB,idA) values($idBook,'$Author')";
+    echo $requeste;
+    $result=mysqli_query($connection,$requeste);
+
      header('location:books.php');
+   
+        
+ 
+
   
 }
 

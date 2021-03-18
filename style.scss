@@ -6,6 +6,11 @@
   font-family: "Montserrat";
   box-sizing: border-box;
 }
+.menu{
+  display: none;
+  float: right;
+  margin: 20px 30px 0px 0px;
+ 
 $primary: #36bbb2;
 .btn {
   text-decoration: none;
@@ -40,6 +45,12 @@ header {
     padding: 10px 40px;
     text-decoration: none;
     color: #19185c;
+  }
+  li.log {
+    background-color: $primary;
+    color: white;
+    font-weight: 700;
+    padding: 10px 0;
   }
   .active{
       text-decoration: underline;
@@ -113,7 +124,6 @@ footer {
 
   border-radius: 15px;
   background-color: #2DA07A80;
-
   padding: 50px;
   margin: 60px 80px;
   label {
@@ -126,8 +136,8 @@ footer {
     background-color: #f1f1f1;
     border-radius: 5px;
     display: flex;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 i {
   color: #2da07a;
   font-size: 20px;

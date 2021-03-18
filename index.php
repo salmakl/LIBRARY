@@ -14,6 +14,28 @@
 
 <body>
 
+<!-- <script>
+        function nav(){
+            var nav = document.getElementById("navcontenu");
+            if(nav.getAttribute("vue")=="active")
+            {
+                document.getElementById("navcontenu").classList.remove("menu");
+                nav.setAttribute("vue","");
+            }else
+            {
+                nav.setAttribute("vue","active");
+                document.getElementById("navcontenu").classList.add("menu");
+
+            }
+        }
+    </script>
+
+<svg class="menu" viewBox="0 0 100 80" width="40" height="40" fill="#8C4055" onclick="nav()">
+        <rect width="100" height="20"></rect>
+        <rect y="30" width="100" height="20"></rect>
+        <rect y="60" width="100" height="20"></rect>
+    </svg> -->
+
     <!--begin header-->
     <header>
         <a href="index.php"><img src="images/logo.png" alt="#"></a>
@@ -22,8 +44,11 @@
             <li><a href="library.php">Gallery</a></li>
             <li><a href="books.php">Books</a></li>
             <li><a href="author.php">Authors</a></li>
+            <li class="log"><a href="login.php" >Login</a></li>
+            
         </ul>
     </header>
+    
     <!--End header-->
     <!--begin main-->
     <main>
@@ -45,7 +70,7 @@
                 corrupti blanditiis nulla repellat quam!</p>
 
         </div>
-        <div>
+        <div class="adv-cont">
             <div>
                 <img src="images/icons/art.svg" alt="">
                 <h3>Lorem, ipsum.</h3>

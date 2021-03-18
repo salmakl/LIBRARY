@@ -1,6 +1,9 @@
-<html lang="en">
 <?php
 include "connection.php";
+?>
+<html lang="en">
+<?php
+
 if(isset($_GET['cin'])){
     $query="SELECT * FROM `authors` WHERE cin='".$_GET['cin']."'";
     $test=mysqli_query($connection,$query);

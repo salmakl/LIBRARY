@@ -1,0 +1,115 @@
+body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .grande-image {
+  width: 50%;
+}
+body{
+  background-color: white !important;
+}
+
+body .container .content {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding: 12px;
+  height: 50%;
+}
+
+body .container .content h5 {
+  font-family: 'Montserrat';
+  opacity: 50%;
+}
+
+body .container .content .title {
+  font-size: 35px;
+  -webkit-box-shadow: 12px;
+          box-shadow: 12px;
+  font-family: 'Montserrat';
+  margin-bottom: 93px;
+  text-shadow: 10px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+body .container .content .input {
+  width: 40%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  background-color: #F0F0F0;
+  border-radius: 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50px;
+  margin: 15px auto;
+}
+
+body .container .content .input .img1 {
+  width: 20px;
+  height: 20px;
+}
+
+body .container .content .input .mainInput {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 255, 0);
+  height: 60px;
+  font-size: 25px;
+  width: 90%;
+}
+
+body .container .content .Btn {
+  margin: 25px auto 0;
+  padding: 22px 85px;
+  background-color: #36BBB2;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  body .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .container .grande-image {
+    width: 90%;
+  }
+  body .container .content {
+    width: 90%;
+  }
+  body .container .content .input {
+    width: 70%;
+  }
+}
+/*# sourceMappingURL=login.css.map */

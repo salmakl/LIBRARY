@@ -296,3 +296,38 @@ section.adv > div:last-child p {
   font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 600px) {
+
+  .body{
+    overflow-x: hidden ;
+  }
+  .BGhome img{
+    content-visibility: hidden;
+
+  }
+
+  .adv-cont{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section.adv > div:last-child {
+    padding: 20px;
+  }
+
+  .container-card {
+    width: 360px;
+    margin-top: 60px;
+    margin-bottom: 10vh;
+  }
+
+  .filter input, .filter select {
+    padding: 1px;
+    width: 88px;
+  }
+
+
+
+
+}

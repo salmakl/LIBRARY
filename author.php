@@ -62,7 +62,7 @@
             <th><h4>CIN</h4></th>
             <th><h4>First Name</h4></th>
             <th><h4>Last Name</h4></th>
-            <th><h4>date naissance</h4></th>
+            <th><h4>Birth date</h4></th>
             <th><h4>Actions</h4></th>
         </tr>
     <?php

@@ -1,5 +1,5 @@
 <?php
-
+include 'connection.php';
 ?>
 <html lang="en">
 <head>
@@ -46,8 +46,15 @@
     </div>
     <div>
         <label for="authors">Authors</label>
-        <select name="authors" id="authors">Authors
-            <option value="">author 1</option>
+        <select name="authors" id="authors">
+            <option></option>
+            <?php
+                $requete="SELECT * FROM authors";
+                $result=mysqli_query($connection,$requete);
+                while($row =$result->fetch_assoc()){
+                    echo "<option value='".$row['cin']."'>".$row['Lname']." ".$row['Fname']."</option>";
+                }
+            ?>
         </select>
 
     </div>
@@ -70,6 +77,7 @@
         <tr>
             <th><h4>ID</h4></th>
             <th><h4>Title</h4></th>
+            <th><h4>Author</h4></th>
             <th><h4>date</h4></th>
             <th><h4>Price</h4></th>
             <th><h4>image</h4></th>
@@ -77,21 +85,22 @@
         </tr>
 
         <?php
-        include "connection.php";
+        
 
-        $query="SELECT * FROM `books`";
+        $query="SELECT books_authors.id as idBA,books.id as idB,authors.cin as idA,authors.Fname,books.name,books.price,books.PubDate,books.img FROM authors,books,books_authors WHERE authors.cin=books_authors.idA AND books.id=books_authors.idB";
         $execute= mysqli_query($connection,$query);
 
         while($data=$execute->fetch_assoc()){
             echo "<tr> 
-                    <td>".$data['id']."</td>
+                    <td>".$data['idB']."</td>
                     <td>".$data['name']."</td>
+                    <td>".$data['Fname']."</td>
                     <td>".$data['PubDate']."</td>
                     <td>".$data['price']."</td>
                     <td><img src='images/".$data['img']."' width=100px /></td>
                     
-                    <td><a href='engin.php?id=".$data['id']."'><i class='far fa-trash-alt'></i></a>
-                    <a href='edit.php?id=".$data['id']."'><i class='far fa-edit'></i></a></td>
+                    <td><a href='engin.php?id=".$data['idB']."'><i class='far fa-trash-alt'></i></a>
+                    <a href='edit.php?id=".$data['idBA']."'><i class='far fa-edit'></i></a></td>
                     </tr>
                     ";
                  
