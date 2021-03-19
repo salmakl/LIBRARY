@@ -1,3 +1,10 @@
+<?php
+include 'connection.php';
+session_start();
+if(empty($_SESSION['pseudo'])){
+    header('location:login.php');
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +24,13 @@
             <li><a href="library.php">Gallery</a></li>
             <li><a href="books.php">Books</a></li>
             <li class="active"><a href="author.php">Authors</a></li>
+            <?php
+            if(empty($_SESSION['pseudo'])){
+                echo "<li class='log'><a href='login.php' >Login</a></li>";
+            }else{
+                echo "<li><a href='logOut.php'>Logout</a></li>";
+            }
+            ?>
         </ul>
     </header>
     <!--End header-->

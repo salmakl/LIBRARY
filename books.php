@@ -1,5 +1,9 @@
 <?php
 include 'connection.php';
+session_start();
+if(empty($_SESSION['pseudo'])){
+    header('location:login.php');
+}
 ?>
 <html lang="en">
 <head>
@@ -20,7 +24,19 @@ include 'connection.php';
             <li><a href="library.php">Gallery</a></li>
             <li class="active"><a href="books.php">Books</a></li>
             <li><a href="author.php">Authors</a></li>
+            <?php
+            if(empty($_SESSION['pseudo'])){
+                echo "<li class='log'><a href='login.php' >Login</a></li>";
+            }else{
+                echo "<li><a href='logOut.php'>Logout</a></li>";
+            }
+            ?>
         </ul>
+        <svg class="menu" viewBox="0 0 100 80" width="40" height="40" fill="#000" onclick="nav()">
+        <rect width="100" height="20"></rect>
+        <rect y="30" width="100" height="20"></rect>
+        <rect y="60" width="100" height="20"></rect>
+    </svg>
     </header>
     <!--End header-->
     
@@ -28,7 +44,7 @@ include 'connection.php';
     <form action="engin.php" method="POST">
 
 <div class="one">
-<div>
+    <div>
         <label for="title">Title</label>
         <input type="text" name="title">
 

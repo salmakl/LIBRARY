@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,7 @@ include 'connection.php';
 </head>
 <body>
 
+
        <!--begin header-->
        <header>
          <a href="index.php"><img src="images/logo.png" alt="#"></a>
@@ -24,7 +26,19 @@ include 'connection.php';
              <li class="active"><a href="library.php">Gallery</a></li>
              <li><a href="books.php">Books</a></li>
              <li><a href="author.php">Authors</a></li>
+             <?php
+            if(empty($_SESSION['pseudo'])){
+                echo "<li class='log'><a href='login.php' >Login</a></li>";
+            }else{
+                echo "<li><a href='logOut.php'>Logout</a></li>";
+            }
+            ?>
          </ul>
+         <svg class="menu" viewBox="0 0 100 80" width="40" height="40" fill="#000" onclick="nav()">
+        <rect width="100" height="20"></rect>
+        <rect y="30" width="100" height="20"></rect>
+        <rect y="60" width="100" height="20"></rect>
+    </svg>
      </header>
      <!--End header-->
 <div class="filter">
@@ -45,10 +59,7 @@ include 'connection.php';
 </div>
 
         
-<!-- 
-        $query="SELECT * FROM books";
-        $execute= mysqli_query($connection,$query);
-        while($data=$execute->fetch_assoc()){} -->
+
    
 <?php
                $query="SELECT authors.Fname,authors.Lname,books.name,books.price,books.img,authors.cin FROM authors,books,books_authors WHERE authors.cin=books_authors.idA AND books.id=books_authors.idB";
@@ -118,5 +129,6 @@ include 'connection.php';
         </div>
     </footer>
     <script src="trie.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

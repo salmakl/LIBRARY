@@ -1,5 +1,9 @@
 <?php
 include "connection.php";
+session_start();
+if(empty($_SESSION['pseudo'])){
+    header('location:login.php');
+}
 ?>
 <html lang="en">
 <?php
