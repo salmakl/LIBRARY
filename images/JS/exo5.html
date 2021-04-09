@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #6292f7;
+        color: #fff;
+      }
+
+      .div {
+        position: relative;
+        width: 500px;
+        height: auto;
+        background-color: #060669;
+        text-align: center;
+        padding: 40px;
+        border-radius: 20px;
+        margin: 100px auto;
+      }
+
+      #text {
+        margin-top: 30px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 0;
+        color: rgb(0, 0, 0);
+        width: 300px;
+        height: 30px;
+      }
+
+      #btn {
+        background-color: #ff0000;
+        border-radius: 0;
+        border: none;
+        color: #fff;
+        width: 80px;
+        height: 31px;
+        margin-bottom: 20px;
+      }
+
+      table {
+        margin: 10px 60px;
+        text-align: left;
+      }
+
+      .delete {
+        background-color: #fbee19;
+        color: black;
+        padding: 5px;
+        border-radius: 5px;
+        position: relative;
+        left: 265px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="div">
+      <h1>Todo List</h1>
+      <input type="text" id="text" />
+      <input type="submit" id="btn" onclick="add()" />
+      <table id="table"></table>
+    </div>
+
+    <script>
+      var table = document.getElementById("table");
+
+      function add() {
+        var text = document.getElementById("text").value;
+        document.getElementById("text").value = "";
+
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        const td2 = document.createElement("td");
+
+        td1.textContent = text;
+        td2.textContent = "delete";
+        td2.classList.add("delete");
+        td2.onclick = function () {
+          this.parentNode.remove();
+        };
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        table.appendChild(tr);
+      }
+
+      function delet(x) {}
+    </script>
+  </body>
+</html>

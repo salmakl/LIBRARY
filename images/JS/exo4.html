@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            overflow: hidden;
+        }
+        #div{
+            position: absolute;
+            z-index: 10;
+            display: none;
+            background-color: rgba(128, 128, 128, 0.5);
+            width: 100vw;
+            height: 100vh;
+            
+            top: 0;
+            left: 0;
+            padding: 25vh 25vw;
+        }
+        #indiv{
+            position: relative;
+            width: 500px;
+            height: 70px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        #button{
+            position: absolute;
+            right: 30px;
+            border: none;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showMe()">Click her to trigger the modal!</button>
+
+    <div id="div">
+        <div id="indiv">
+            <button id="button" onclick="hideMe()">X</button>
+            <h2>Hello, I am a modal!</h2>
+        
+        </div>
+        
+    </div>
+
+    <script>
+        var div = document.getElementById('div');
+        function showMe(){
+            div.style.display = "block";
+        }
+
+        function hideMe(){
+            div.style.display = "none";
+        }
+    </script>
+    
+</body>
+</html>

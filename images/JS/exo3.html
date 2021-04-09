@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Compteur des mots: <input type="text" id="champs" /><br />
+    <input type="button" value="Afficher" onClick="count_words()" />
+    <script>
+      function count_words() {
+        var string = document.getElementById("champs").value;
+        alert(string.split(" ").length);
+      }
+    </script>
+</body>
+
+</html>
