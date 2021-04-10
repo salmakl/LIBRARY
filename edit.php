@@ -75,11 +75,11 @@ if(isset($_GET['id'])){
 
     </div>
     </div>
-
-</div>
     <div style="text-align:center;">
         <input type="submit" value="Edit" name="EDIT">
     </div> 
+</div>
+
      
     </form>
 </div>

@@ -35,7 +35,7 @@ if(empty($_SESSION['pseudo'])){
     </header>
     <!--End header-->
  <div class="form">
-    <form action="engin.php" method="POST">
+    <form onsubmit="validationAuteur()" action="engin.php" name="formA" method="POST">
         <div class="one">
             <div>
                 <label for="name">CIN</label>
@@ -129,5 +129,6 @@ if(empty($_SESSION['pseudo'])){
       
         </div>
     </footer>
+    <script src="js/validation.js"></script>
 </body>
 </html>

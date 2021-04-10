@@ -41,7 +41,7 @@ if(empty($_SESSION['pseudo'])){
     <!--End header-->
     
     <div class="form">
-    <form action="engin.php" method="POST">
+    <form onsubmit="validationBook()" action="engin.php" name="formB" method="POST">
 
 <div class="one">
     <div>
@@ -156,5 +156,6 @@ if(empty($_SESSION['pseudo'])){
       
         </div>
     </footer>
+    <script src="js/validation.js"></script>
 </body>
 </html>
