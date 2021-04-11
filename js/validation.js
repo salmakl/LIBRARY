@@ -41,21 +41,21 @@ function validationAuteur(){
 
     if(cin==""){
         event.preventDefault();
-        alert("title is required");
+        alert("CIN is required");
     }
 
     if(Fname==""){
         event.preventDefault();
-        alert("Price is required");
+        alert("First name is required");
     }
     if(Lname==""){
         event.preventDefault();
-        alert("Date is required");
+        alert("Last name is required");
     }
 
     if(birthDate==""){
         event.preventDefault();
-        alert("Author is required");
+        alert("birth date is required");
     }
 
 }
